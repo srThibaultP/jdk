@@ -337,12 +337,12 @@ bool CgroupSubsystemFactory::determine_type(CgroupInfo* cg_infos,
             // case pick the one under /sys/fs/cgroup and discard others.
             if (strstr(cg_infos[CPUSET_IDX]._mount_path, "/sys/fs/cgroup") != cg_infos[CPUSET_IDX]._mount_path) {
               //log_warning(os, container)("Duplicate cpuset controllers detected. Picking %s, skipping %s.",
-                                         tmpmount, cg_infos[CPUSET_IDX]._mount_path);
+                                         //tmpmount, cg_infos[CPUSET_IDX]._mount_path);
               os::free(cg_infos[CPUSET_IDX]._mount_path);
               cg_infos[CPUSET_IDX]._mount_path = os::strdup(tmpmount);
             } else {
               //log_warning(os, container)("Duplicate cpuset controllers detected. Picking %s, skipping %s.",
-                                         cg_infos[CPUSET_IDX]._mount_path, tmpmount);
+                                         //cg_infos[CPUSET_IDX]._mount_path, tmpmount);
             }
           } else {
             cg_infos[CPUSET_IDX]._mount_path = os::strdup(tmpmount);
